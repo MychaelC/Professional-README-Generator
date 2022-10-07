@@ -2,7 +2,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
-const generateMarkdown = require("./utils/generateMarkdown")
+const generateMarkdown = require("./utils/generateMarkdown");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -16,12 +16,17 @@ const questions = [
     {
         type: "input",
         name: "description",
-        message: "Describe your project",
+        message: "Describe your project.",
     },
     {
         type: "input",
         name: "installation",
-        message: "Describe installation instructions for your project"
+        message: "Describe installation instructions for your project."
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "Describe usage information and examples of use for your project."
     },
     {
         type: "list",
@@ -37,7 +42,7 @@ const questions = [
     {
         type: "input",
         name: "contributing",
-        message: "Describe the contribution guidelines of your project?"
+        message: "Describe the contribution guidelines for your project?"
     },
     {
         type: "input",
@@ -45,9 +50,9 @@ const questions = [
         message: "What is your email?"
     },
     {
-    type: "input",
-    name: "username",
-    message: "What is your GitHub username?"
+        type: "input",
+        name: "username",
+        message: "What is your GitHub username?"
     },
 ];
 
@@ -70,8 +75,9 @@ async function init() {
         const data = await promptUser();
         const md = generateMarkdown(data);
 
-        await writeFileAsync("README.md", md);
-    } catch (err){
+        await writeFileAsync("samplereadme.md", md);
+        console.log("Successfully wrote to samplereadme.md");
+    } catch (err) {
         console.log(err);
     }
 }
