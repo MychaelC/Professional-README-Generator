@@ -17,7 +17,7 @@ Initialize "Professional-README.md" by installing the dependencies with 'npm ins
 > ES6+
 
 # What it looks like
-<iframe src="https://drive.google.com/file/d/1nLeSkCwbCb7MAn9rCKAt_rKWTOi5dUYz/preview" width="640" height="480"></iframe>
+image.png
 
 # License
 
